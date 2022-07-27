@@ -27,7 +27,7 @@ function elecBill() {
         }
 
         var tongTien = kw * tienDien;
-        var result = "Ho va ten:" + " " + hoTen + ". So tien:" + " " + tongTien + "VND";
+        var result = "Ho va ten:" + " " + hoTen + ". So tien:" + " " + new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tongTien);
         document.getElementById("footer2").innerHTML = result;
     }
     
