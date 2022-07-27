@@ -1,3 +1,9 @@
+// function myFunction() {
+//     var x = document.getElementById("khuVuc").value;
+
+// }
+
+
 function enrollment() {
     // Dau vao
     var diemChuan = document.getElementById("diemChuan").value;
