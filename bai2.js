@@ -10,24 +10,24 @@ function elecBill() {
     }
     else {
         var tienDien = 0;
-        if ((kw > 0) && (kw <= 50)) {
-            tienDien = 500;
+        if (kw <= 50) {
+            tienDien = kw * 500;
         }
-        else if ((kw > 50) && (kw <= 100)) {
-            tienDien = 650;
+        else if (kw <= 100) {
+            tienDien = 50 * 500 + (kw - 50) * 650;
         }
-        else if ((kw > 100) && (kw <= 200)) {
-            tienDien = 850;
+        else if (kw <= 200) {
+            tienDien = 50 * 500 + 50 * 650 + (kw - 100) * 850;
         }
-        else if ((kw > 200) && (kw <= 350)) {
-            tienDien = 1100;
+        else if (kw <= 350) {
+            tienDien = 50 * 500 + 50 * 650 + 100 * 850 + (kw - 200) * 1100;
         }
-        else if (kw > 350) {
-            tienDien = 1300;
+        else {
+            tienDien = 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (kw - 350) * 1300;
         }
 
-        var tongTien = kw * tienDien;
-        var result = "Ho va ten:" + " " + hoTen + ". So tien:" + " " + new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tongTien);
+        
+        var result = "Ho va ten:" + " " + hoTen + ". So tien:" + " " + new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tienDien);
         document.getElementById("footer2").innerHTML = result;
     }
     
